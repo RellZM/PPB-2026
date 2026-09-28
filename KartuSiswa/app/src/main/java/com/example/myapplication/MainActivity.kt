@@ -69,16 +69,16 @@ fun ProfileCardScreen(modifier: Modifier = Modifier) {
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .padding(top = 40.dp)
-                    .height(80.dp) // Ukuran diubah agak lebih besar agar proposional karena teks dihilangkan
+                    .height(80.dp)
             )
         }
 
-        // Card putih yang menimpa latar belakang ungu
+        // Card putih yang menimpa latar belakang
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 24.dp)
-                .padding(top = 160.dp, bottom = 24.dp), // Jarak ke bawah untuk menimpa header
+                .padding(top = 160.dp, bottom = 24.dp),
             shape = RoundedCornerShape(16.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
             colors = CardDefaults.cardColors(containerColor = Color.White)
@@ -184,13 +184,13 @@ fun ProfileInfoRow(icon: ImageVector, label: String, value: String) {
             Text(
                 text = label,
                 fontSize = 12.sp,
-                color = Color.DarkGray // Dibuat lebih gelap dari Gray sebelumnya agar mudah dibaca
+                color = Color.DarkGray
             )
             Text(
                 text = value,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black // Dibuat hitam tegas
+                color = Color.Black
             )
         }
     }

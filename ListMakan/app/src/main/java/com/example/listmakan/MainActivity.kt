@@ -114,13 +114,20 @@ fun FoodMenuScreen() {
             sheetState = sheetState,
             containerColor = Color.White
         ) {
-            CartSheetContent(cartItems = cartItems)
+            CartSheetContent(
+                cartItems = cartItems,
+                onCheckoutSuccess = {
+                    cartItems.clear()
+                    showCart = false
+                }
+            )
         }
     }
 }
 
 @Composable
-fun CartSheetContent(cartItems: List<FoodItem>) {
+fun CartSheetContent(cartItems: List<FoodItem>, onCheckoutSuccess: () -> Unit) {
+    var showSuccessDialog by remember { mutableStateOf(false) }
     val total = cartItems.sumOf { it.price.removePrefix("$").toIntOrNull() ?: 0 }
 
     Column(
@@ -173,7 +180,7 @@ fun CartSheetContent(cartItems: List<FoodItem>) {
             Spacer(modifier = Modifier.height(24.dp))
             
             Button(
-                onClick = { /* TODO: Implement checkout */ },
+                onClick = { showSuccessDialog = true },
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = RedCustom,
@@ -185,6 +192,40 @@ fun CartSheetContent(cartItems: List<FoodItem>) {
             
             Spacer(modifier = Modifier.height(32.dp))
         }
+    }
+
+    if (showSuccessDialog) {
+        AlertDialog(
+            onDismissRequest = { /* Don't allow dismiss by clicking outside */ },
+            title = {
+                Text(
+                    text = "Transaksi Berhasil!",
+                    fontWeight = FontWeight.Bold,
+                    color = RedCustom
+                )
+            },
+            text = {
+                Text(
+                    text = "Pesanan kamu sedang disiapkan. Total pembayaran sebesar $$total.",
+                    fontSize = 16.sp
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showSuccessDialog = false
+                        onCheckoutSuccess()
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = YellowCustom,
+                        contentColor = RedCustom
+                    )
+                ) {
+                    Text("OK", fontWeight = FontWeight.Bold)
+                }
+            },
+            containerColor = Color.White
+        )
     }
 }
 
