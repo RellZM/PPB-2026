@@ -57,19 +57,19 @@ APK debug akan tersedia di `app/build/outputs/apk/debug/`.
 
 ### Beranda
 
-![Beranda](screenshots/home.png)
+![Beranda](<img width="720" height="1600" alt="WhatsApp Image 2026-10-20 at 14 12 54(1)" src="https://github.com/user-attachments/assets/fe53754a-5c5b-4ab9-972c-ed4e1dc236ea" />)
 
 ### Form pendaftaran anggota
 
-![Form pendaftaran](screenshots/registration-form.png)
+![Form pendaftaran](<img width="720" height="1600" alt="WhatsApp Image 2026-10-20 at 14 12 53" src="https://github.com/user-attachments/assets/584607c6-741e-438d-9d5e-857bb1fad62a" />)
 
 ### Daftar anggota
 
-![Daftar anggota](screenshots/member-list.png)
+![Daftar anggota](<img width="1080" height="2400" alt="WhatsApp Image 2026-10-20 at 14 12 53(1)" src="https://github.com/user-attachments/assets/2dba1266-3287-4310-b7d5-016bbb61493a" />)
 
 ### Detail anggota
 
-![Detail anggota](screenshots/member-detail.png)
+![Detail anggota](<img width="1080" height="2400" alt="WhatsApp Image 2026-10-20 at 14 12 53(2)" src="https://github.com/user-attachments/assets/eb756a42-ebb5-4b25-98c0-91dec2331092" />)
 
 ## Struktur utama
 
